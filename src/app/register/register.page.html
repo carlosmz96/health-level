@@ -1,0 +1,28 @@
+<ion-content>
+  <div class="container">
+    <h1>Formulario de Registro</h1>
+    <p>Por favor, rellene el siguiente formulario para registrarse.</p>
+
+    <form>
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" class="form-control" title="Nombre" name="nombre" [(ngModel)]="usuario.nombre">
+      </div>
+
+      <div class="form-group">
+        <label for="apellidos">Apellidos</label>
+        <input type="text" id="apellidos" class="form-control" title="Apellidos" name="apellidos" [(ngModel)]="usuario.apellidos">
+      </div>
+
+      <div class="form-group">
+        <label for="fechaNacimiento">Fecha de nacimiento</label>
+        <input type="date" id="fechaNacimiento" class="form-control" title="Fecha de nacimiento" name="fechaNacimiento"
+          [(ngModel)]="usuario.fechaNacimiento">
+      </div>
+
+      <button class="btn btn-success" style="width: 100%;" title="Registrarse" (click)="registro()">Registrarse</button>
+    </form>
+  </div>
+
+
+</ion-content>
