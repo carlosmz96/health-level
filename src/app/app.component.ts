@@ -1,3 +1,4 @@
+import { MenuController } from '@ionic/angular';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(
+    private menu: MenuController
+  ) {}
+
+  openFirst() {
+    this.menu.enable(true, 'first');
+    this.menu.open('first');
+  }
+
+  selectPage() {
+    this.menu.close('first');
+  }
 }
