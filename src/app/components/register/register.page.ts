@@ -8,21 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterPage implements OnInit {
 
-  usuario: Usuario;
+  user: Usuario;
 
   constructor() {
-    this.usuario = {
-      nombre: '',
-      apellidos: '',
-      fechaNacimiento: undefined
-    };
+    this.user = {};
   }
 
   ngOnInit() {
   }
 
   registro() {
-    console.log(this.usuario);
+    console.log(this.user);
+  }
+
+  formatDate(fecha: any) {
+    this.user.fechaNacimiento = fecha;
   }
 
 }

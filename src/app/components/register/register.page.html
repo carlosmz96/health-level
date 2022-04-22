@@ -11,29 +11,39 @@
 
 <ion-content>
   <div class="container">
-    <h1>Formulario de Registro</h1>
-    <p>Por favor, rellene el siguiente formulario para registrarse.</p>
+    <h1>¡Este es el primer paso!</h1>
+    <p>Rellena todos los campos del formulario para registrarte.</p>
 
     <form>
-      <div class="form-group">
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" class="form-control" title="Nombre" name="nombre" [(ngModel)]="usuario.nombre">
-      </div>
+      <ion-item>
+        <ion-label position="floating">DNI</ion-label>
+        <ion-input name="dni" [(ngModel)]="user.dni"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input name="nombre" [(ngModel)]="user.nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Apellidos</ion-label>
+        <ion-input name="apellidos" [(ngModel)]="user.apellidos"></ion-input>
+      </ion-item>
+      <ion-item button="true" id="open-date-input">
+        <ion-label position="floating">Fecha de nacimiento</ion-label>
+        <ion-input name="fechaNacimiento" value="{{user.fechaNacimiento | date: 'dd/MM/yyyy'}}"></ion-input>
+        <ion-popover trigger="open-date-input" show-backdrop="false">
+          <ng-template>
+            <ion-datetime
+              #popoverDatetime
+              presentation="date"
+              (ionChange)="formatDate(popoverDatetime.value)"
+            ></ion-datetime>
+          </ng-template>
+        </ion-popover>
+      </ion-item>
 
-      <div class="form-group">
-        <label for="apellidos">Apellidos</label>
-        <input type="text" id="apellidos" class="form-control" title="Apellidos" name="apellidos" [(ngModel)]="usuario.apellidos">
-      </div>
+      <ion-button expand="block" (click)="registro()">Regístrate</ion-button>
 
-      <div class="form-group">
-        <label for="fechaNacimiento">Fecha de nacimiento</label>
-        <input type="date" id="fechaNacimiento" class="form-control" title="Fecha de nacimiento" name="fechaNacimiento"
-          [(ngModel)]="usuario.fechaNacimiento">
-      </div>
 
-      <button class="btn btn-success" style="width: 100%;" title="Registrarse" (click)="registro()">Registrarse</button>
     </form>
   </div>
-
-
 </ion-content>
