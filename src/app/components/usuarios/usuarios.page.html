@@ -1,9 +1,25 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>usuarios</ion-title>
+    <ion-button slot="start" fill="clear">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-button>
+    <ion-title>
+      Listado de usuarios
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card *ngFor="let user of users">
+    <ion-list>
+      <ion-item>
+        <ion-label>
+          <p><span class="font-weight-bold">DNI: </span>{{user.dni}}</p>
+          <p><span class="font-weight-bold">Nombre: </span>{{user.nombre}}</p>
+          <p><span class="font-weight-bold">Apellidos: </span>{{user.apellidos}}</p>
+          <p><span class="font-weight-bold">Fecha de nacimiento: </span>{{user.fechaNacimiento | date: 'dd/MM/yyyy'}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
 </ion-content>

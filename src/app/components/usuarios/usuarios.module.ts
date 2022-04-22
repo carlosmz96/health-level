@@ -1,6 +1,6 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -17,4 +17,4 @@ import { UsuariosPage } from './usuarios.page';
   ],
   declarations: [UsuariosPage]
 })
-export class UsuariosPageModule {}
+export class UsuariosPageModule { }
